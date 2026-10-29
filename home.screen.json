@@ -12,6 +12,7 @@
           { "t": "txt", "text": "No boards yet. Tap + to create one.", "pin": "center, center" }
         ]
       },
+      { "t": "btn", "label": "Settings", "on": "flow:openSettings", "pin": "center, bottom 80" },
       { "t": "fab", "icon": "filled.Add", "alt": "New board", "on": "flow:newBoard", "pin": "end, bottom 16" }
     ]
   }

@@ -36,6 +36,9 @@
     "settings.screen.json"
   ],
   "flows": [
-    { "flow": "newBoard", "desc": "Create a new whiteboard", "nodes": {}, "seq": [] }
+    { "flow": "newBoard", "desc": "Create a new whiteboard", "nodes": { "n1": { "k": "action", "op": "nav", "to": "Board" } }, "seq": ["n1"] },
+    { "flow": "openHome", "desc": "Go to home", "nodes": { "n1": { "k": "action", "op": "nav", "to": "Home" } }, "seq": ["n1"] },
+    { "flow": "openSettings", "desc": "Go to settings", "nodes": { "n1": { "k": "action", "op": "nav", "to": "Settings" } }, "seq": ["n1"] },
+    { "flow": "goBack", "desc": "Go back", "nodes": { "n1": { "k": "action", "op": "nav", "to": "Home" } }, "seq": ["n1"] }
   ]
 }

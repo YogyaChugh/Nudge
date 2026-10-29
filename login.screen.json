@@ -12,7 +12,7 @@
         "alignSelf": "center",
         "kids": [
           { "t": "txt", "text": "Draw together, anywhere.", "pin": "center, top 80" },
-          { "t": "btn", "label": "Continue with Google", "pin": "center, top 180" }
+          { "t": "btn", "label": "Continue with Google", "on": "flow:openHome", "pin": "center, top 180" }
         ]
       }
     ]
