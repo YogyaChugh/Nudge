@@ -1,18 +1,28 @@
 {
   "screen": "Login",
-  "desc": "Google sign-in",
+  "desc": "Welcome and Google sign-in",
   "root": {
     "t": "scaffold",
-    "top": { "t": "appBar", "title": "Whiteboard" },
     "kids": [
       {
-        "t": "free",
+        "t": "scroll",
         "fill": "both",
-        "maxW": 420,
-        "alignSelf": "center",
         "kids": [
-          { "t": "txt", "text": "Draw together, anywhere.", "pin": "center, top 80" },
-          { "t": "btn", "label": "Continue with Google", "on": "flow:openHome", "pin": "center, top 180" }
+          {
+            "t": "col",
+            "gap": 16,
+            "align": "center",
+            "pad": [32, 48, 32, 32],
+            "kids": [
+              { "t": "surface", "color": "surfaceVariant", "r": 28, "w": 112, "h": 112, "kids": [
+                { "t": "icon", "name": "filled.Edit", "size": 56, "decorative": true }
+              ] },
+              { "t": "txt", "text": "Nudge", "level": "h1", "align": "center" },
+              { "t": "txt", "text": "An endless canvas for ideas, together.", "align": "center", "color": "onSurfaceVariant" },
+              { "t": "btn", "label": "Continue with Google", "on": "flow:openHome" },
+              { "t": "txt", "text": "By continuing you agree to our Terms and Privacy Policy.", "level": "label", "align": "center", "color": "onSurfaceVariant" }
+            ]
+          }
         ]
       }
     ]

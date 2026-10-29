@@ -1,0 +1,30 @@
+{
+  "screen": "Share",
+  "desc": "Share, export or print a board",
+  "root": {
+    "t": "scaffold",
+    "top": {
+      "t": "appBar",
+      "title": "Share",
+      "nav": { "t": "iconBtn", "icon": "autoMirrored.filled.ArrowBack", "alt": "Back", "on": "flow:openBoard" }
+    },
+    "kids": [
+      {
+        "t": "col",
+        "gap": 8,
+        "fill": "both",
+        "pad": [16, 16, 16, 16],
+        "kids": [
+          { "t": "txt", "text": "Invite people", "level": "title" },
+          { "t": "listItem", "headline": "Share link", "supporting": "Anyone with the link can view", "leading": { "t": "icon", "name": "filled.Link", "decorative": true } },
+          { "t": "listItem", "headline": "WhatsApp", "supporting": "Send the board to a chat", "leading": { "t": "icon", "name": "autoMirrored.filled.Chat", "decorative": true } },
+          { "t": "divider" },
+          { "t": "txt", "text": "Export", "level": "title" },
+          { "t": "listItem", "headline": "Export as PDF", "leading": { "t": "icon", "name": "filled.PictureAsPdf", "decorative": true } },
+          { "t": "listItem", "headline": "Export as image", "leading": { "t": "icon", "name": "filled.Image", "decorative": true } },
+          { "t": "listItem", "headline": "Print", "leading": { "t": "icon", "name": "filled.Print", "decorative": true } }
+        ]
+      }
+    ]
+  }
+}

@@ -3,15 +3,32 @@
   "desc": "Infinite whiteboard canvas",
   "root": {
     "t": "scaffold",
-    "top": { "t": "appBar", "title": "Whiteboard" },
+    "top": {
+      "t": "appBar",
+      "title": "Untitled board",
+      "nav": { "t": "iconBtn", "icon": "autoMirrored.filled.ArrowBack", "alt": "Back", "on": "flow:openHome" },
+      "actions": [
+        { "t": "iconBtn", "icon": "filled.Share", "alt": "Share", "on": "flow:openShare" },
+        { "t": "iconBtn", "icon": "filled.MoreVert", "alt": "More", "on": "flow:openSettings" }
+      ]
+    },
+    "bottom": {
+      "t": "surface",
+      "color": "surface",
+      "tonal": 2,
+      "kids": [
+        { "t": "row", "arrange": "spaceEvenly", "pad": [8, 8, 8, 8], "kids": [
+          { "t": "iconBtn", "icon": "filled.NearMe", "alt": "Select", "on": "flow:openBoard" },
+          { "t": "iconBtn", "icon": "filled.Draw", "alt": "Pen", "on": "flow:openBoard" },
+          { "t": "iconBtn", "icon": "filled.Category", "alt": "Shapes", "on": "flow:openBoard" },
+          { "t": "iconBtn", "icon": "filled.TextFields", "alt": "Text", "on": "flow:openBoard" },
+          { "t": "iconBtn", "icon": "filled.Image", "alt": "Insert image", "on": "flow:openBoard" },
+          { "t": "iconBtn", "icon": "autoMirrored.filled.Undo", "alt": "Undo", "on": "flow:openBoard" }
+        ] }
+      ]
+    },
     "kids": [
-      {
-        "t": "free",
-        "fill": "both",
-        "kids": [
-          { "t": "canvas", "alt": "Whiteboard canvas", "fill": "both", "pin": "center, center" }
-        ]
-      }
+      { "t": "canvas", "alt": "Whiteboard canvas", "fill": "both" }
     ]
   }
 }

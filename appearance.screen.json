@@ -1,0 +1,26 @@
+{
+  "screen": "Appearance",
+  "desc": "Light, dark or system theme",
+  "state": ["theme"],
+  "root": {
+    "t": "scaffold",
+    "top": {
+      "t": "appBar",
+      "title": "Appearance",
+      "nav": { "t": "iconBtn", "icon": "autoMirrored.filled.ArrowBack", "alt": "Back", "on": "flow:openSettings" }
+    },
+    "kids": [
+      {
+        "t": "col",
+        "gap": 16,
+        "fill": "both",
+        "pad": [20, 20, 20, 20],
+        "kids": [
+          { "t": "txt", "text": "Theme", "level": "title" },
+          { "t": "segmented", "bind": "theme", "options": "['light', 'dark', 'system']", "label": "{{option}}" },
+          { "t": "txt", "text": "Choose light, dark, or match your device settings.", "color": "onSurfaceVariant" }
+        ]
+      }
+    ]
+  }
+}

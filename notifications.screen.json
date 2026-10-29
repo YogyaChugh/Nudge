@@ -1,0 +1,27 @@
+{
+  "screen": "Notifications",
+  "desc": "Notification preferences",
+  "state": ["notificationsOn", "mentionsOn", "editsOn"],
+  "root": {
+    "t": "scaffold",
+    "top": {
+      "t": "appBar",
+      "title": "Notifications",
+      "nav": { "t": "iconBtn", "icon": "autoMirrored.filled.ArrowBack", "alt": "Back", "on": "flow:openSettings" }
+    },
+    "kids": [
+      {
+        "t": "col",
+        "gap": 12,
+        "fill": "both",
+        "pad": [20, 20, 20, 20],
+        "kids": [
+          { "t": "switch", "bind": "notificationsOn", "label": "Someone joins my board" },
+          { "t": "switch", "bind": "mentionsOn", "label": "I am mentioned" },
+          { "t": "switch", "bind": "editsOn", "label": "Every edit (can be noisy)" },
+          { "t": "txt", "text": "We group activity so you are not spammed.", "level": "label", "color": "onSurfaceVariant" }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "screen": "Profile",
+  "desc": "Edit name and photo",
+  "state": ["userName", "userEmail"],
+  "root": {
+    "t": "scaffold",
+    "top": {
+      "t": "appBar",
+      "title": "Profile",
+      "nav": { "t": "iconBtn", "icon": "autoMirrored.filled.ArrowBack", "alt": "Back", "on": "flow:openSettings" }
+    },
+    "kids": [
+      {
+        "t": "col",
+        "gap": 16,
+        "fill": "both",
+        "pad": [20, 20, 20, 20],
+        "kids": [
+          { "t": "surface", "color": "surfaceVariant", "r": 36, "w": 96, "h": 96, "kids": [
+            { "t": "icon", "name": "filled.Person", "size": 48, "decorative": true }
+          ] },
+          { "t": "btn", "label": "Change photo", "style": "outlined", "on": "flow:openProfile" },
+          { "t": "field", "bind": "userName", "label": "Display name", "autofill": "name" },
+          { "t": "field", "bind": "userEmail", "label": "Email", "keyboard": "email", "autofill": "email" },
+          { "t": "btn", "label": "Save changes", "on": "flow:openSettings" }
+        ]
+      }
+    ]
+  }
+}

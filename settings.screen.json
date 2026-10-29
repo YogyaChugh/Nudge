@@ -1,24 +1,28 @@
 {
   "screen": "Settings",
-  "desc": "Settings, profile, theme",
+  "desc": "Settings and account",
   "root": {
     "t": "scaffold",
-    "top": { "t": "appBar", "title": "Settings" },
+    "top": {
+      "t": "appBar",
+      "title": "Settings",
+      "nav": { "t": "iconBtn", "icon": "autoMirrored.filled.ArrowBack", "alt": "Back", "on": "flow:openHome" }
+    },
     "kids": [
       {
-        "t": "free",
+        "t": "col",
+        "gap": 8,
         "fill": "both",
-        "maxW": 600,
-        "alignSelf": "center",
+        "pad": [8, 8, 8, 8],
         "kids": [
-          { "t": "txt", "text": "Profile", "pin": "left 16, top 24" },
-          { "t": "txt", "text": "Name", "pin": "left 16, top 64" },
-          { "t": "txt", "text": "Theme", "pin": "left 16, top 120" },
-          { "t": "chip", "text": "Light", "pin": "left 16, top 160" },
-          { "t": "chip", "text": "Dark", "pin": "left 106, top 160" },
-          { "t": "chip", "text": "System", "pin": "left 196, top 160" },
-          { "t": "btn", "label": "Delete account", "pin": "left 16, top 240" },
-          { "t": "txt", "text": "Developed by AnyStudio", "pin": "center, bottom 24" }
+          { "t": "listItem", "headline": "Profile", "supporting": "Name and photo", "on": "flow:openProfile", "leading": { "t": "icon", "name": "filled.Person", "decorative": true } },
+          { "t": "listItem", "headline": "Appearance", "supporting": "Light, dark or system", "on": "flow:openAppearance", "leading": { "t": "icon", "name": "filled.Palette", "decorative": true } },
+          { "t": "listItem", "headline": "Notifications", "supporting": "When someone is on your board", "on": "flow:openNotifications", "leading": { "t": "icon", "name": "filled.Notifications", "decorative": true } },
+          { "t": "listItem", "headline": "Share app", "supporting": "Invite people to Nudge", "on": "flow:openShare", "leading": { "t": "icon", "name": "filled.Share", "decorative": true } },
+          { "t": "divider" },
+          { "t": "listItem", "headline": "Account", "supporting": "Sign out or delete your account", "on": "flow:openAccount", "leading": { "t": "icon", "name": "filled.ManageAccounts", "decorative": true } },
+          { "t": "listItem", "headline": "About", "supporting": "Version and credits", "on": "flow:openAbout", "leading": { "t": "icon", "name": "filled.Info", "decorative": true } },
+          { "t": "txt", "text": "Developed by AnyStudio", "level": "label", "align": "center", "color": "onSurfaceVariant" }
         ]
       }
     ]

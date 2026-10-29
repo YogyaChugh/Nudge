@@ -1,0 +1,29 @@
+{
+  "screen": "Account",
+  "desc": "Sign out or delete account",
+  "state": ["userEmail"],
+  "root": {
+    "t": "scaffold",
+    "top": {
+      "t": "appBar",
+      "title": "Account",
+      "nav": { "t": "iconBtn", "icon": "autoMirrored.filled.ArrowBack", "alt": "Back", "on": "flow:openSettings" }
+    },
+    "kids": [
+      {
+        "t": "col",
+        "gap": 12,
+        "fill": "both",
+        "pad": [20, 20, 20, 20],
+        "kids": [
+          { "t": "txt", "text": "Signed in", "level": "title" },
+          { "t": "txt", "bind": "userEmail", "color": "onSurfaceVariant" },
+          { "t": "btn", "label": "Sign out", "style": "outlined", "on": "flow:openHome" },
+          { "t": "divider" },
+          { "t": "btn", "label": "Delete account", "style": "text", "on": "flow:openHome" },
+          { "t": "txt", "text": "Deleting removes every board you own. This cannot be undone.", "level": "label", "color": "onSurfaceVariant" }
+        ]
+      }
+    ]
+  }
+}

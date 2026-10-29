@@ -4,6 +4,36 @@
   "id": "com.nudgeboard.app",
   "desc": "Free open infinite whiteboard with real-time collaboration",
   "start": "Login",
+  "theme": {
+    "light": {
+      "primary": "#1F2937",
+      "onPrimary": "#FFFFFF",
+      "secondary": "#4B5563",
+      "background": "#F8FAFC",
+      "surface": "#FFFFFF",
+      "surfaceVariant": "#EEF2F7",
+      "onSurface": "#111827",
+      "onSurfaceVariant": "#6B7280",
+      "outline": "#E2E8F0"
+    },
+    "dark": {
+      "primary": "#E5E7EB",
+      "onPrimary": "#0B0F14",
+      "secondary": "#9CA3AF",
+      "background": "#0B0F14",
+      "surface": "#111827",
+      "surfaceVariant": "#1F2937",
+      "onSurface": "#F9FAFB",
+      "onSurfaceVariant": "#9CA3AF",
+      "outline": "#243041"
+    },
+    "type": {
+      "h1": { "size": 32, "weight": 700 },
+      "h2": { "size": 24, "weight": 700 },
+      "h3": { "size": 20, "weight": 600 }
+    },
+    "shapes": { "medium": 16, "large": 24, "extraLarge": 32 }
+  },
   "types": {
     "Board": {
       "fields": {
@@ -27,18 +57,36 @@
     "user": { "type": "User?" },
     "boards": { "type": "list<Board>", "init": [] },
     "currentBoard": { "type": "Board?" },
-    "theme": { "type": "string", "init": "\"system\"" }
+    "theme": { "type": "string", "init": "\"system\"" },
+    "searchQuery": { "type": "string", "init": "\"\"" },
+    "notificationsOn": { "type": "bool", "init": true },
+    "mentionsOn": { "type": "bool", "init": true },
+    "editsOn": { "type": "bool", "init": false },
+    "userName": { "type": "string", "init": "\"\"" },
+    "userEmail": { "type": "string", "init": "\"\"" }
   },
   "screens": [
     "login.screen.json",
     "home.screen.json",
     "board.screen.json",
-    "settings.screen.json"
+    "settings.screen.json",
+    "profile.screen.json",
+    "appearance.screen.json",
+    "notifications.screen.json",
+    "share.screen.json",
+    "account.screen.json",
+    "about.screen.json"
   ],
   "flows": [
-    { "flow": "newBoard", "desc": "Create a new whiteboard", "nodes": { "n1": { "k": "action", "op": "nav", "to": "Board" } }, "seq": ["n1"] },
-    { "flow": "openHome", "desc": "Go to home", "nodes": { "n1": { "k": "action", "op": "nav", "to": "Home" } }, "seq": ["n1"] },
-    { "flow": "openSettings", "desc": "Go to settings", "nodes": { "n1": { "k": "action", "op": "nav", "to": "Settings" } }, "seq": ["n1"] },
-    { "flow": "goBack", "desc": "Go back", "nodes": { "n1": { "k": "action", "op": "nav", "to": "Home" } }, "seq": ["n1"] }
+    { "flow": "openHome", "desc": "Go to the board list", "nodes": { "n1": { "k": "action", "op": "nav", "to": "Home" } }, "seq": ["n1"] },
+    { "flow": "openSettings", "desc": "Open settings", "nodes": { "n1": { "k": "action", "op": "nav", "to": "Settings" } }, "seq": ["n1"] },
+    { "flow": "openBoard", "desc": "Open a whiteboard", "nodes": { "n1": { "k": "action", "op": "nav", "to": "Board" } }, "seq": ["n1"] },
+    { "flow": "newBoard", "desc": "Create a new whiteboard and open it", "nodes": { "n1": { "k": "action", "op": "nav", "to": "Board" } }, "seq": ["n1"] },
+    { "flow": "openProfile", "desc": "Edit the profile", "nodes": { "n1": { "k": "action", "op": "nav", "to": "Profile" } }, "seq": ["n1"] },
+    { "flow": "openAppearance", "desc": "Choose the theme", "nodes": { "n1": { "k": "action", "op": "nav", "to": "Appearance" } }, "seq": ["n1"] },
+    { "flow": "openNotifications", "desc": "Manage notifications", "nodes": { "n1": { "k": "action", "op": "nav", "to": "Notifications" } }, "seq": ["n1"] },
+    { "flow": "openShare", "desc": "Share or export a board", "nodes": { "n1": { "k": "action", "op": "nav", "to": "Share" } }, "seq": ["n1"] },
+    { "flow": "openAccount", "desc": "Account actions", "nodes": { "n1": { "k": "action", "op": "nav", "to": "Account" } }, "seq": ["n1"] },
+    { "flow": "openAbout", "desc": "About Nudge", "nodes": { "n1": { "k": "action", "op": "nav", "to": "About" } }, "seq": ["n1"] }
   ]
 }

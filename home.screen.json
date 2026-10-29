@@ -1,19 +1,40 @@
 {
   "screen": "Home",
-  "desc": "List of whiteboards",
+  "desc": "All whiteboards",
+  "state": ["searchQuery", "boards", "theme"],
   "root": {
     "t": "scaffold",
-    "top": { "t": "appBar", "title": "My Whiteboards" },
+    "top": {
+      "t": "appBar",
+      "title": "Nudge",
+      "actions": [
+        { "t": "iconBtn", "icon": "filled.Settings", "alt": "Settings", "on": "flow:openSettings" }
+      ]
+    },
+    "fab": { "t": "fab", "icon": "filled.Add", "alt": "New board", "on": "flow:newBoard" },
     "kids": [
       {
-        "t": "free",
+        "t": "col",
+        "gap": 12,
         "fill": "both",
+        "pad": [16, 12, 16, 16],
         "kids": [
-          { "t": "txt", "text": "No boards yet. Tap + to create one.", "pin": "center, center" }
+          { "t": "searchBar", "bind": "searchQuery", "placeholder": "Search boards" },
+          { "t": "txt", "text": "Recent boards", "level": "title" },
+          { "t": "list", "bind": "boards", "item": "b", "gap": 8, "kids": [
+            { "t": "card", "dir": "row", "on": "flow:openBoard", "pad": [14, 14, 14, 14], "gap": 12, "kids": [
+              { "t": "surface", "color": "surfaceVariant", "r": 12, "w": 48, "h": 48, "kids": [
+                { "t": "icon", "name": "filled.Dashboard", "decorative": true }
+              ] },
+              { "t": "col", "gap": 2, "kids": [
+                { "t": "txt", "bind": "b.title", "level": "title", "lines": 1 },
+                { "t": "txt", "text": "Edited {{b.updatedAt}}", "level": "label", "color": "onSurfaceVariant" }
+              ] }
+            ] }
+          ] },
+          { "t": "txt", "text": "No boards yet. Tap + to start one.", "align": "center", "color": "onSurfaceVariant" }
         ]
-      },
-      { "t": "btn", "label": "Settings", "on": "flow:openSettings", "pin": "center, bottom 80" },
-      { "t": "fab", "icon": "filled.Add", "alt": "New board", "on": "flow:newBoard", "pin": "end, bottom 16" }
+      }
     ]
   }
 }
