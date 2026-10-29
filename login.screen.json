@@ -1,0 +1,20 @@
+{
+  "screen": "Login",
+  "desc": "Google sign-in",
+  "root": {
+    "t": "scaffold",
+    "top": { "t": "appBar", "title": "Whiteboard" },
+    "kids": [
+      {
+        "t": "free",
+        "fill": "both",
+        "maxW": 420,
+        "alignSelf": "center",
+        "kids": [
+          { "t": "txt", "text": "Draw together, anywhere.", "pin": "center, top 80" },
+          { "t": "btn", "label": "Continue with Google", "pin": "center, top 180" }
+        ]
+      }
+    ]
+  }
+}

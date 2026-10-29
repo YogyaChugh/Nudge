@@ -1,0 +1,17 @@
+{
+  "screen": "Board",
+  "desc": "Infinite whiteboard canvas",
+  "root": {
+    "t": "scaffold",
+    "top": { "t": "appBar", "title": "Whiteboard" },
+    "kids": [
+      {
+        "t": "free",
+        "fill": "both",
+        "kids": [
+          { "t": "canvas", "alt": "Whiteboard canvas", "fill": "both", "pin": "center, center" }
+        ]
+      }
+    ]
+  }
+}

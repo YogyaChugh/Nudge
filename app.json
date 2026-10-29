@@ -1,0 +1,41 @@
+{
+  "ir": 1,
+  "app": "Nudge",
+  "id": "com.example.nudge",
+  "desc": "Free open infinite whiteboard with real-time collaboration",
+  "start": "Login",
+  "types": {
+    "Board": {
+      "fields": {
+        "id": "string",
+        "title": "string",
+        "owner": "string",
+        "createdAt": "string",
+        "updatedAt": "string"
+      }
+    },
+    "User": {
+      "fields": {
+        "id": "string",
+        "name": "string",
+        "email": "string",
+        "avatar": "string"
+      }
+    }
+  },
+  "state": {
+    "user": { "type": "User?" },
+    "boards": { "type": "list<Board>", "init": [] },
+    "currentBoard": { "type": "Board?" },
+    "theme": { "type": "string", "init": "\"system\"" }
+  },
+  "screens": [
+    "login.screen.json",
+    "home.screen.json",
+    "board.screen.json",
+    "settings.screen.json"
+  ],
+  "flows": [
+    { "flow": "newBoard", "desc": "Create a new whiteboard", "nodes": {}, "seq": [] }
+  ]
+}

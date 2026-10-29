@@ -1,0 +1,26 @@
+{
+  "screen": "Settings",
+  "desc": "Settings, profile, theme",
+  "root": {
+    "t": "scaffold",
+    "top": { "t": "appBar", "title": "Settings" },
+    "kids": [
+      {
+        "t": "free",
+        "fill": "both",
+        "maxW": 600,
+        "alignSelf": "center",
+        "kids": [
+          { "t": "txt", "text": "Profile", "pin": "left 16, top 24" },
+          { "t": "txt", "text": "Name", "pin": "left 16, top 64" },
+          { "t": "txt", "text": "Theme", "pin": "left 16, top 120" },
+          { "t": "chip", "text": "Light", "pin": "left 16, top 160" },
+          { "t": "chip", "text": "Dark", "pin": "left 106, top 160" },
+          { "t": "chip", "text": "System", "pin": "left 196, top 160" },
+          { "t": "btn", "label": "Delete account", "pin": "left 16, top 240" },
+          { "t": "txt", "text": "Developed by AnyStudio", "pin": "center, bottom 24" }
+        ]
+      }
+    ]
+  }
+}

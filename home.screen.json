@@ -1,0 +1,18 @@
+{
+  "screen": "Home",
+  "desc": "List of whiteboards",
+  "root": {
+    "t": "scaffold",
+    "top": { "t": "appBar", "title": "My Whiteboards" },
+    "kids": [
+      {
+        "t": "free",
+        "fill": "both",
+        "kids": [
+          { "t": "txt", "text": "No boards yet. Tap + to create one.", "pin": "center, center" }
+        ]
+      },
+      { "t": "fab", "icon": "filled.Add", "alt": "New board", "on": "flow:newBoard", "pin": "end, bottom 16" }
+    ]
+  }
+}

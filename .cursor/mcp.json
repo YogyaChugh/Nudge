@@ -1,0 +1,16 @@
+{
+    "mcpServers": {
+        "anystudio": {
+            "command": "cmd",
+            "args": [
+                "/c",
+                "C:\\UrDad\\AnyStudio-compiler\\cli\\build\\install\\anystudio\\bin\\anystudio.bat",
+                "mcp",
+                "C:\\Users\\Yogya\\AnyStudio Apps\\whitey",
+                "--write",
+                "--root",
+                "C:\\UrDad\\AnyStudio-compiler"
+            ]
+        }
+    }
+}
